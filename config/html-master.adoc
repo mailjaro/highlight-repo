@@ -1,0 +1,16 @@
+= Teskstutheving i AsciiDoc
+Jan R Sandbakken <mailjaro@gmail.com>
+v1.0 2026-02-19
+:description: Et hefte om syntaksutheving via AsciiDoc
+:doctype: book
+:icons: font
+:toc: left
+:toc-title: Innholdsfortegnelse
+:toclevels: 3
+:sectanchors:
+:stylesheet: styles/asciidoctor.css
+:source-highlighter: rouge
+:rouge-style: monokai
+image::../images/cover.png[role=cover,align=center]
+
+include::sample.adoc[]

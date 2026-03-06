@@ -1,0 +1,14 @@
+= Teskstutheving i AsciiDoc
+Jan R Sandbakken <mailjaro@gmail.com>
+v1.0 2026-02-19
+:doctype: book
+:front-cover-image: image:../images/cover.png[]
+:description: Et hefte om syntaksutheving via AsciiDoc
+:icons: font
+:sectanchors:
+:source-highlighter: rouge
+:rouge-style: base16.solarized.light
+:ebook-stylesdir: ../styles
+// :ebook-stylesheet: custom.css
+
+include::../sample.adoc[]

@@ -1,0 +1,67 @@
+# Custom Asciidoctor PDF theme — stylish, readable code blocks
+extends: default
+
+# Fonts (if you bundle fonts, update paths under font.catalog)
+base_font_family: Noto Sans
+heading_font_family: Noto Sans
+monospace_font_family: Noto Sans Mono
+
+authors_font_family: Noto Sans
+
+default_font_size: 10
+
+# Colors (hex without #)
+base_color: 24292e
+link_color: 005cc5
+sidebar_background_color: f6f8fa
+sidebar_border_color: e1e4e8
+
+document:
+  background_color: ffffff
+
+# Heading appearance
+heading:
+  h1:
+    font_size: 12 # 28
+    color: 24292e
+  h2:
+    font_size: 20
+    color: 24292e
+
+# Code block styling
+code:
+  font_family: Noto Sans Mono
+  font_size: 9
+  line_height: 1.25
+  border_radius: 6
+  background_color: f6f8fa
+  border_color: e1e4e8
+  padding: 12
+  # text color for code if token colors are not present
+  color: 24292e
+
+# Provide token color hints (Rouge will supply token classes; these map common semantic names)
+syntax:
+  comment: 6a737d
+  keyword: d73a49
+  string: 032f62
+  number: 005cc5
+  name: 24292e
+  function: 6f42c1
+  punctuation: 24292e
+
+# Misc layout tweaks
+page:
+  margin: 48
+
+toc:
+  include_title: true
+  border_color: e1e4e8
+  background_color: fdfdfd
+
+# If you want to bundle fonts, add entries to `font.catalog` and update the family names above.
+# Example:
+# font:
+#   catalog:
+#     "Noto Sans": fonts/NotoSans-Regular.ttf
+#     "Noto Sans Mono": fonts/NotoSansMono-Regular.ttf
