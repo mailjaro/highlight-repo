@@ -94,7 +94,7 @@ Inkluderer man det følgende
 :linkcss:
 ```
 
-i preamble (i toppen av dokument eller masterfil) blir disse også produsert sammen med outputfilen ved produksjon.
+i preamble (i toppen av dokument eller masterfil) blir disse også produsert sammen med output-filen ved produksjon.
 
 Men man må uansett være forberedt på å skrive mye mer CSS for en fullverdig formatering av hele dokumentet.
 
@@ -129,11 +129,29 @@ asciidoctor -a stylesheet=my-style.css ...
 
 **EPUB:**
 
+```yaml
+:stylesheet: my-style.css
+:ebook-theme: my-style.yml
+```
 
-PDF:
+i preamble eller direkte fra kommandolinja inkludere
 
+```bash
+asciidoctor-epub3 -a stylesheet=my-style.css ...
+asciidoctor-epub3 -a ebook-theme=my-style.yml ...
+```
 
+**PDF:**
 
+```yaml
+:pdf-theme: styles/my-style.yml
+```
+
+i preamble eller direkte fra kommandolinja inkludere
+
+```bash
+asciidoctor-pdf -a pdf-theme=my-theme.yml ...
+```
 
 For å highlighte et bestemt kodeeksempel i gjenkjente "språk", som f.eks. **python**, bruker man ADOC blokker som:
 
@@ -146,6 +164,8 @@ def hello():
 ```
 
 (Og Markdown *fence blocks* mappes også til slike ved **pandoc**.)
+
+La oss se i detalj på hvordan man kan produsere disse formatene, med en *real life*-katalogstruktur mm.
 
 ### ROUGE: HTML output
 
@@ -177,7 +197,9 @@ Videre antar vi at:
 - stiler ligger på **styles/**
 - og output skal til **builds/**:
 
-Om ikke annet spesifiseres i preamble, benyttes default CSS for Ascidoctor. Ønsker man higlighting, er det eklest å inkludere  `:source-highlighter: rouge` og f.eks. `:rouge-style: monokai` i et preamble.
+Ønsker man higlighting, er det enklest å inkludere `:source-highlighter: rouge` og f.eks. `:rouge-style: monokai` i et preamble.
+
+Om ikke annet spesifiseres i preamble, benyttes default CSS for Ascidoctor.
 
 Ofte ønsker man å sende output til en egen katalog, f.eks, **bulid/**, og kanskje med eg bestemt filnavn, f.eks. **test.html**, hvilket enten kan gjøres ved
 
@@ -186,13 +208,9 @@ asciidoctor config/html-master.adoc -B <hjemmekatalog> \
             -D builds -o <navn>.html
 ```
 
-
 ### ROUGE: EPUB output
 
-
-```yaml
-:ebook-stylesheet: custom.css
-```
+Vi antar samme katalogstruktur og hoveddfil. En EPUB-masterfil kan se slik ut:
 
 ```yaml
 = Teskstutheving i AsciiDoc
@@ -206,28 +224,22 @@ v1.0 2026-02-19
 :source-highlighter: rouge
 :rouge-style: base16.solarized.light
 :ebook-stylesdir: ../styles
-// :ebook-stylesheet: custom.css
+// :ebook-stylesheet: my-style.css
 
 include::../sample.adoc[]
 ```
 
 ```bash
-asciidoctor-epub3 -a source-highlighter=rouge -a linkcss -a
-stylesheet=rouge.css file.adoc -o file.epub
+asciidoctor-epub3 config/epub-master.adoc -D builds -o <navn>.epub
 ```
 
-The EPUB reader will use the included CSS for syntax colors.
+I preamble er brukerstilen kommentert ut, og default formatering blir gjeldende.
+
+Igjen er **rouge** og **rouge-style monokai** satt i masterfilen.
 
 ### Rouge: PDF output
 
-For å produsere PDF må man benytte **asciidoctor-pdf** istedenfor **asciidoctor**. Igjen antar vi at man har en master-pdf med preamble som setter titel, forfatter, forsidebilde, highlight-stil osv, samt inkluderer hovedfilen(e). Videre antar vi at
-
-- hovedfilen heter **sample.adoc**
-- bilder ligger på **images/**
-- stiler ligger på **styles/**
-- og output skal til **builds/**
-
-En pdf-master (på **config/**) kan f.eks. da se slik ut:
+Vi antar igjen samme hovedfil og katalogstruktur. En pdf-master kan f.eks. se slik ut:
 
 ```txt
 = Tittel
@@ -242,20 +254,20 @@ v1.0 2026-02-12
 :toc-title: Innholdsfortegnelse
 :toclevels: 3
 :sectanchors:
-:pdf-theme: styles/asciidoctor-default.yml
+:pdf-theme: styles/my-style.yml
 :source-highlighter: rouge
 :rouge-style: base16.dark
 
 include::sample.adoc[]
 ```
 
-og selve produskjonen skjer veD
-
+og produskjonen kan ved
 
 ```bash
 asciidoctor-pdf -B <arbeidskatalog> -D builds -o <navn>.pdf
 ```
 
-❗ Ved bruk av opsjonen `-B` **finner asciidoctro-pdf** korrekt fram til alle filene her.
+Igjen velges **rouge** og **rouge-style** fra masterfilen
 
-❗ Her brukes altså default YAML for **asciidoctor-pdf**, men det er bare å editere tilhørende linje imasterfilen.
+❗ Ved bruk av opsjonen `-B` **finner asciidoctro-pdf** korrekt fram til alle filene her. Det fungerer ikke for **asciidoctor** og **asciidoctror-pdf**.
+
