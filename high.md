@@ -22,9 +22,9 @@ Vi starter med en gjennomgang av **Rouge** og avslutter med **Pygments**.
 Her ser vi installasjonsstegene på Ubuntu:
 
 ```bash
-sudo apt update
-sudo apt install -y ruby ruby-dev build-essential
-sudo gem install --no-document rouge asciidoctor asciidoctor-pdf asciidoctor-epub3
+% sudo apt update
+% sudo apt install -y ruby ruby-dev build-essential
+% sudo gem install --no-document rouge asciidoctor asciidoctor-pdf asciidoctor-epub3
 ```
 
 **Fedora:**
@@ -32,8 +32,8 @@ sudo gem install --no-document rouge asciidoctor asciidoctor-pdf asciidoctor-epu
 Her er installasjonsstegene på Fedora:
 
 ```bash
-sudo dnf install -y ruby ruby-devel make gcc
-sudo gem install --no-document rouge asciidoctor asciidoctor-pdf asciidoctor-epub3
+% sudo dnf install -y ruby ruby-devel make gcc
+% sudo gem install --no-document rouge asciidoctor asciidoctor-pdf asciidoctor-epub3
 ```
 
 ## Rouge: Programversjoner
@@ -49,10 +49,10 @@ Ikke alt er likt i ulike versjoner av programmene som benyttes. For ordensskyld 
 Disse kan evt. oppdateres ved:
 
 ```bash
-sudo gem update --system
-gem update asciidoctor
-gem update asciidoctor-epub3
-gem update asciidoctor-pdf
+% sudo gem update --system
+% gem update asciidoctor
+% gem update asciidoctor-epub3
+% gem update asciidoctor-pdf
 ```
 
 
@@ -68,7 +68,7 @@ Når dette er installert kan man ta i bruk uthevingen ved å inkludere det følg
 De tilgjengelige Rouge-stilene i siste linje kan ses fra
 
 ```bash
-rougify help style
+% rougify help style
 ```
 
 og er i min versjon:
@@ -102,7 +102,7 @@ og er i min versjon:
 Alternativt kan man styre det direkte fra kommandolinjen, som eksemplifisert her:
 
 ```bash
-asciidoctor -a source-highlighter=rouge \
+% asciidoctor -a source-highlighter=rouge \
             -a rouge-style=monokai <fil.adoc> ...
 ```
 
@@ -130,8 +130,8 @@ Men om man likevel ikke er fornøyd med default og vil stile output-filene selv,
 Men for syntaksuthevelsen kan det være greit å vite at man kan ta utgangspunkt i de nevnte Rouge-kombinasjonene ved å produsere CCS-er ved kommandoer som
 
 ```bash
-rougify style github > github.css
-rougify style monokai > monokai.css
+% rougify style github > github.css
+% rougify style monokai > monokai.css
 ```
 
 Inkluderer man det følgende
@@ -144,7 +144,7 @@ i preamble (i toppen av dokument eller masterfil) blir disse også produsert sam
 
 Men selv med dette som utgangspunkt,  må man være forberedt på en større utvidelse av CSS-ene for en fullverdig formatering av hele dokumentet. Disse tar kun av seg syntaksuthevelsene.
 
-For å få inkludert egne stiler kan man inkludere for dem på ulike måter, avhengig av output-format:
+For å få benyttet egne stiler kan man inkludere dem på ulike måter, avhengig av output-format:
 
 ### HTML-stiling
 
@@ -157,7 +157,7 @@ Legg inn
 i preamble, eller utfør direkte fra kommandolinja
 
 ```bash
-asciidoctor -a stylesheet=my-style.css ...
+% asciidoctor -a stylesheet=my-style.css ...
 ```
 
 ### EPUB-stiling
@@ -171,7 +171,7 @@ Legg in
 i preamble, eller utfør det følgende direkte fra kommandolinja
 
 ```bash
-asciidoctor-epub3 -a ebook-theme=my-style.yml ...
+% asciidoctor-epub3 -a ebook-theme=my-style.yml ...
 ```
 
 På grunn av bakoverkompabilitet støtter EPUB fortsatt følgende CCS-baserte varianter:
@@ -182,7 +182,7 @@ På grunn av bakoverkompabilitet støtter EPUB fortsatt følgende CCS-baserte va
 
 i preamble og 
 ```bash
-asciidoctor-epub3 -a stylesheet=my-style.css ...
+% asciidoctor-epub3 -a stylesheet=my-style.css ...
 ```
 
 fra kommandolinja.
@@ -198,26 +198,16 @@ Legg inn
 i preamble eller utfør følgende dirkete fra kommandolinja
 
 ```bash
-asciidoctor-pdf -a pdf-theme=my-theme.yml ...
+% asciidoctor-pdf -a pdf-theme=my-theme.yml ...
 ```
 
-Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen `[source,<språk>]` i ADOC-filene, så blir de syntaksuthvet ut fra språk og ROUGE-stilvalg.
-
-Det følgende vil angi en Python-kodeblokk, hvor kodeord, spesielle symboler osv. vil bli fargelagt ut fra Rouge-valget:
-
-```text
-[source,python]
-----
-def hello():
-    print("hi")
-----
-```
+Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen `[source,<språk>]` i ADOC-filene, så blir de syntaksuthvet ut fra språk og Rouge-stilvalg.
 
 ❗ **pandoc** mapper forøvrig *fence blocks* til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med MD og konvertere til sluttformater med ADOC som mellommann.
 
-## ROUGE: Produksjon
+## Rouge: Produksjon
 
-Vi skal nå i detalj på hvordan output-formatene våre kan produseres i en praktisk situasjon, med en *real life*-katalogstruktur mm. Vi forutsetter da at vi jobber med et prosjekt organisert som følger:
+Vi skal nå i detalj se på hvordan output-formatene våre kan produseres i en praktisk situasjon, med en *real life*-katalogstruktur mm. Vi forutsetter da at vi jobber med et prosjekt organisert som følger:
 
 - hovedfilen heter **sample.adoc**
 - bilder ligger på **images/**
@@ -233,7 +223,7 @@ La oss starte med HTML og se på hvordan outout-formater produseres i disse omgi
 
 Masterfilen kan se noe slik ut:
 
-```text
+```yaml
 = Tittel
 Ola Nordmann <ola.nordmann@gmail.com>
 v1.0 2026-02-12
@@ -248,17 +238,17 @@ v1.0 2026-02-12
 :source-highlighter: rouge
 :rouge-style: monokai
 image::../images/cover.png[role=cover,align=center]
-
-include::sample.adoc[]
 ```
+
+I etterkant av preamble vil man så typisk inkludere filen(e) som inneholder selve ADOC-teksten, altså f.eks. `include::sample.adoc[]`.
 
 Ønsker man higlighting, er det enklest, som gjort her, å inkludere `:source-highlighter: rouge` og f.eks. `:rouge-style: monokai` i preamble.
 
 Ofte ønsker man å sende output til en egen katalog, f.eks, **bulid/**, og kanskje med et bestemt filnavn, f.eks. **test.html**. Dermed ender vi opp med å gjøre:
 
 ```bash
-asciidoctor config/html-master.adoc -B <hjemmekatalog> \
-            -D builds -o <navn>.html
+% asciidoctor config/html-master.adoc -B <hjemmekatalog> \
+             -D builds -o <navn>.html
 ```
 
 ❗ **asciidoctor** har fått masterfilen som input-fil. Denne ligger i underkatalogen **config/**, hvilket påvirker referansene til andre kataloger i treet. Opsjonen `-B` setter hjemmekatalogen, og filer i **config/** og **stiler/** finnes dermed korrekt uten prefiks `../`. **images/** trenger likevel dette prefikset (uvisst av hvilken grunn).  
@@ -280,14 +270,12 @@ v1.0 2026-02-19
 :rouge-style: base16.solarized.light
 :ebook-stylesdir: ../styles
 :ebook-stylesheet: my-style.css
-
-include::../sample.adoc[]
 ```
 
-Produksjonskommandoen kan da se slik ut:
+etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:
 
 ```bash
-asciidoctor-epub3 config/epub-master.adoc -D builds -o <navn>.epub
+% asciidoctor-epub3 config/epub-master.adoc -D builds -o <navn>.epub
 ```
 
 Igjen er **rouge** og **rouge-style monokai** satt i masterfilen.
@@ -298,7 +286,7 @@ Igjen er **rouge** og **rouge-style monokai** satt i masterfilen.
 
 Vi antar igjen samme hovedfil og katalogstruktur. En pdf-master kan f.eks. se slik ut:
 
-```txt
+```yaml
 = Tittel
 Ola Nordmann <ola.nordmann@gmail.com>
 v1.0 2026-02-12
@@ -314,14 +302,12 @@ v1.0 2026-02-12
 :pdf-theme: styles/my-style.yml
 :source-highlighter: rouge
 :rouge-style: base16.dark
-
-include::sample.adoc[]
 ```
 
-og produksjonen kan gjøres ved:
+etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:
 
 ```bash
-asciidoctor-pdf -B <arbeidskatalog> -D builds -o <navn>.pdf
+% asciidoctor-pdf -B <arbeidskatalog> -D builds -o <navn>.pdf
 ```
 
 Igjen velges **rouge** og **rouge-style** fra masterfilen
@@ -335,17 +321,17 @@ Hvordan pandoc installeres på Ubuntu og Fedora er vist under. For PDF-produksjo
 ### Ubuntu
 
 ```bash
-sudo apt install pandoc
-sudo apt install texlive-xetex texlive-latex-recommended \
-     texlive-latex-extra texlive-fonts-recommended
+% sudo apt install pandoc
+% sudo apt install texlive-xetex texlive-latex-recommended \
+      texlive-latex-extra texlive-fonts-recommended
 ```
 
 ### Fedora
 
 ```bash
-sudo dnf install pandoc
-sudo dnf install texlive-xetex texlive-collection-latexrecommended \
-     texlive-collection-fontsrecommended
+% sudo dnf install pandoc
+% sudo dnf install texlive-xetex texlive-collection-latexrecommended \
+      texlive-collection-fontsrecommended
 ```
 
 ## Pygments: Installering
@@ -355,23 +341,23 @@ La oss forlate **Rouge** og ADOCs, og isteden tar for oss **Pygments** og MD.
 **Pygments** er et Python-basert system for syntaksuthevelse. Det fins gjerne ferdige pakker man kan installere, f.eks. under **dnf** og **snap**, men det kan være bedre å installere via **pip3** direkte:
 
 ```bash
-pip3 install pygments
+% pip3 install pygments
 ```
 
 Pygments kan da siden oppgraderes ved:
 
 ```bash
-pip install --upgrade pygments
+% pip install --upgrade pygments
 ```
 
 Ønsker man pakkene, så kan disse installeres ved for hhv. Ubuntu og Fedora ved:
 
 ```bash
-sudo apt install python3-pygments
+% sudo apt install python3-pygments
 ```
 
 ```bash
-sudo dnf install python3-pygments
+% sudo dnf install python3-pygments
 ```
 
 ## Pygments: Relaterte versjoner
@@ -379,8 +365,8 @@ sudo dnf install python3-pygments
 Vi har valgt pip-varianten her, og versjonene vi benytterfremkommer av
 
 ```bash
-pandoc --version
-pygmentize -V
+% pandoc --version
+% pygmentize -V
 ```
 
 I dette heftet er følgende lagt i grunn:
@@ -393,19 +379,19 @@ I dette heftet er følgende lagt i grunn:
 Om man vil se en liste over støttede språk og formater, kan man gjøre:
 Vi skal benytte Pygments til å få
 ```bash
-pygmentize -L lexers
+% pygmentize -L lexers
 ```
 
 Ønsker man å se de inkluderte temaene, kan man gjøre:
 
 ```bash
-pygmentize -L styles
+% pygmentize -L styles
 ```
 
 For **pandoc** har man disse ferdige syntaksuthevelsene:
 
 ```bash
-pandoc --list-highlight-styles
+% pandoc --list-highlight-styles
 ```
 
 ```text
@@ -424,15 +410,15 @@ haddock
 Man utnytter disse syntaksstilene i våre tre formater ved kommandoer som: 
 
 ```bash
-pandoc test.md --highlight-style=pygments -s -o builds/test.html
+% pandoc test.md --highlight-style=pygments -s -o builds/test.html
 ```
 
 ```bash
-pandoc test.md --highlight-style=breezedark -o builds/test.epub
+% pandoc test.md --highlight-style=breezedark -o builds/test.epub
 ```
 
 ```bash
-pandoc test.md --highlight-style=zenburn --pdf-engine=xelatex \
+% pandoc test.md --highlight-style=zenburn --pdf-engine=xelatex \
        -o builds/test.pdf
 ```
 
