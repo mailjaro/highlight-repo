@@ -4,4 +4,8 @@ styles/
 images/
 .vscode/
 high.md
-high.adoc
+high-1.adoc
+high-2.adoc
+README.md
+Makefile
+runner.sh

@@ -439,38 +439,51 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <style>
 pre.rouge table td { padding: 5px; }
 pre.rouge table pre { margin: 0; }
-pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
-  color: #75715e;
-  font-style: italic;
+pre.rouge {
+  color: #faf6e4;
+  background-color: #122b3b;
 }
-pre.rouge .cm {
-  color: #75715e;
-  font-style: italic;
+pre.rouge .gl {
+  color: #dee5e7;
+  background-color: #4e5d62;
 }
-pre.rouge .c1 {
-  color: #75715e;
+pre.rouge .gp {
+  color: #a8e1fe;
+  font-weight: bold;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
+  color: #6c8b9f;
   font-style: italic;
 }
 pre.rouge .cp {
-  color: #75715e;
+  color: #b2fd6d;
   font-weight: bold;
 }
-pre.rouge .cs {
-  color: #75715e;
+pre.rouge .err {
+  color: #fefeec;
+  background-color: #cc0000;
+}
+pre.rouge .gr {
+  color: #cc0000;
   font-weight: bold;
   font-style: italic;
 }
-pre.rouge .err {
-  color: #960050;
-  background-color: #1e0010;
+pre.rouge .k, pre.rouge .kd, pre.rouge .kv {
+  color: #f6dd62;
+  font-weight: bold;
 }
-pre.rouge .gi {
-  color: #ffffff;
-  background-color: #324932;
+pre.rouge .o, pre.rouge .ow {
+  color: #4df4ff;
+  font-weight: bold;
+}
+pre.rouge .p, pre.rouge .pi {
+  color: #4df4ff;
 }
 pre.rouge .gd {
-  color: #ffffff;
-  background-color: #493131;
+  color: #cc0000;
+}
+pre.rouge .gi {
+  color: #b2fd6d;
 }
 pre.rouge .ge {
   font-style: italic;
@@ -479,180 +492,130 @@ pre.rouge .ges {
   font-weight: bold;
   font-style: italic;
 }
-pre.rouge .gr {
-  color: #aa0000;
-}
-pre.rouge .gt {
-  color: #aa0000;
-}
-pre.rouge .gh {
-  color: #999999;
-}
-pre.rouge .go {
-  color: #888888;
-}
-pre.rouge .gp {
-  color: #555555;
-}
 pre.rouge .gs {
   font-weight: bold;
 }
-pre.rouge .gu {
-  color: #aaaaaa;
-}
-pre.rouge .k, pre.rouge .kv {
-  color: #66d9ef;
-  font-weight: bold;
+pre.rouge .gt {
+  color: #dee5e7;
+  background-color: #4e5d62;
 }
 pre.rouge .kc {
-  color: #66d9ef;
-  font-weight: bold;
-}
-pre.rouge .kd {
-  color: #66d9ef;
-  font-weight: bold;
-}
-pre.rouge .kp {
-  color: #66d9ef;
-  font-weight: bold;
-}
-pre.rouge .kr {
-  color: #66d9ef;
-  font-weight: bold;
-}
-pre.rouge .kt {
-  color: #66d9ef;
+  color: #f696db;
   font-weight: bold;
 }
 pre.rouge .kn {
-  color: #f92672;
+  color: #ffb000;
   font-weight: bold;
 }
-pre.rouge .ow {
-  color: #f92672;
+pre.rouge .kp {
+  color: #ffb000;
   font-weight: bold;
 }
-pre.rouge .o {
-  color: #f92672;
+pre.rouge .kr {
+  color: #ffb000;
   font-weight: bold;
 }
-pre.rouge .mf {
-  color: #ae81ff;
-}
-pre.rouge .mh {
-  color: #ae81ff;
-}
-pre.rouge .il {
-  color: #ae81ff;
-}
-pre.rouge .mi {
-  color: #ae81ff;
-}
-pre.rouge .mo {
-  color: #ae81ff;
-}
-pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
-  color: #ae81ff;
-}
-pre.rouge .se {
-  color: #ae81ff;
-}
-pre.rouge .sa {
-  color: #66d9ef;
+pre.rouge .gh {
+  color: #ffb000;
   font-weight: bold;
 }
-pre.rouge .sb {
-  color: #e6db74;
-}
-pre.rouge .sc {
-  color: #e6db74;
-}
-pre.rouge .sd {
-  color: #e6db74;
-}
-pre.rouge .s2 {
-  color: #e6db74;
-}
-pre.rouge .sh {
-  color: #e6db74;
-}
-pre.rouge .si {
-  color: #e6db74;
-}
-pre.rouge .sx {
-  color: #e6db74;
-}
-pre.rouge .sr {
-  color: #e6db74;
-}
-pre.rouge .s1 {
-  color: #e6db74;
-}
-pre.rouge .ss {
-  color: #e6db74;
-}
-pre.rouge .s, pre.rouge .dl {
-  color: #e6db74;
-}
-pre.rouge .na {
-  color: #a6e22e;
-}
-pre.rouge .nc {
-  color: #a6e22e;
+pre.rouge .gu {
+  color: #ffb000;
   font-weight: bold;
 }
-pre.rouge .nd {
-  color: #a6e22e;
-  font-weight: bold;
-}
-pre.rouge .ne {
-  color: #a6e22e;
-  font-weight: bold;
-}
-pre.rouge .nf, pre.rouge .fm {
-  color: #a6e22e;
+pre.rouge .kt {
+  color: #b2fd6d;
   font-weight: bold;
 }
 pre.rouge .no {
-  color: #66d9ef;
+  color: #b2fd6d;
+  font-weight: bold;
 }
-pre.rouge .bp {
-  color: #f8f8f2;
+pre.rouge .nc {
+  color: #b2fd6d;
+  font-weight: bold;
 }
-pre.rouge .nb {
-  color: #f8f8f2;
-}
-pre.rouge .ni {
-  color: #f8f8f2;
+pre.rouge .nd {
+  color: #b2fd6d;
+  font-weight: bold;
 }
 pre.rouge .nn {
-  color: #f8f8f2;
+  color: #b2fd6d;
+  font-weight: bold;
 }
-pre.rouge .vc {
-  color: #f8f8f2;
+pre.rouge .bp {
+  color: #b2fd6d;
+  font-weight: bold;
 }
-pre.rouge .vg {
-  color: #f8f8f2;
-}
-pre.rouge .vi {
-  color: #f8f8f2;
-}
-pre.rouge .nv, pre.rouge .vm {
-  color: #f8f8f2;
-}
-pre.rouge .w {
-  color: #f8f8f2;
+pre.rouge .ne {
+  color: #b2fd6d;
+  font-weight: bold;
 }
 pre.rouge .nl {
-  color: #f8f8f2;
+  color: #ffb000;
   font-weight: bold;
 }
 pre.rouge .nt {
-  color: #f92672;
+  color: #ffb000;
+  font-weight: bold;
 }
-pre.rouge {
-  color: #f8f8f2;
-  background-color: #49483e;
+pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
+  color: #f696db;
+  font-weight: bold;
+}
+pre.rouge .ld {
+  color: #f696db;
+  font-weight: bold;
+}
+pre.rouge .ss {
+  color: #f696db;
+  font-weight: bold;
+}
+pre.rouge .s, pre.rouge .sb, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .sh, pre.rouge .sx, pre.rouge .sr, pre.rouge .s1 {
+  color: #fff0a6;
+  font-weight: bold;
+}
+pre.rouge .sa {
+  color: #f6dd62;
+  font-weight: bold;
+}
+pre.rouge .se {
+  color: #4df4ff;
+  font-weight: bold;
+}
+pre.rouge .sc {
+  color: #4df4ff;
+  font-weight: bold;
+}
+pre.rouge .si {
+  color: #4df4ff;
+  font-weight: bold;
+}
+pre.rouge .nb {
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #BBBBBB;
+}
+pre.rouge .go {
+  color: #BBBBBB;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #a8e1fe;
+}
+pre.rouge .py {
+  color: #a8e1fe;
+}
+pre.rouge .na {
+  color: #a8e1fe;
+}
+pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+  color: #a8e1fe;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -679,7 +642,7 @@ pre.rouge {
 <li><a href="#_pdf_stiling">PDF-stiling</a></li>
 </ul>
 </li>
-<li><a href="#_rouge_produksjon">ROUGE: Produksjon</a>
+<li><a href="#_rouge_produksjon">Rouge: Produksjon</a>
 <ul class="sectlevel3">
 <li><a href="#_html_output">HTML-output</a></li>
 <li><a href="#_epub_output">EPUB-output</a></li>
@@ -758,9 +721,9 @@ pre.rouge {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>apt update
-<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> ruby ruby-dev build-essential
-<span class="nb">sudo </span>gem <span class="nb">install</span> <span class="nt">--no-document</span> rouge asciidoctor asciidoctor-pdf asciidoctor-epub3</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>apt update
+% <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> ruby ruby-dev build-essential
+% <span class="nb">sudo </span>gem <span class="nb">install</span> <span class="nt">--no-document</span> rouge asciidoctor asciidoctor-pdf asciidoctor-epub3</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -771,8 +734,8 @@ pre.rouge {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>dnf <span class="nb">install</span> <span class="nt">-y</span> ruby ruby-devel make gcc
-<span class="nb">sudo </span>gem <span class="nb">install</span> <span class="nt">--no-document</span> rouge asciidoctor asciidoctor-pdf asciidoctor-epub3</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>dnf <span class="nb">install</span> <span class="nt">-y</span> ruby ruby-devel make gcc
+% <span class="nb">sudo </span>gem <span class="nb">install</span> <span class="nt">--no-document</span> rouge asciidoctor asciidoctor-pdf asciidoctor-epub3</code></pre>
 </div>
 </div>
 </div>
@@ -805,10 +768,10 @@ pre.rouge {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>gem update <span class="nt">--system</span>
-gem update asciidoctor
-gem update asciidoctor-epub3
-gem update asciidoctor-pdf</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>gem update <span class="nt">--system</span>
+% gem update asciidoctor
+% gem update asciidoctor-epub3
+% gem update asciidoctor-pdf</code></pre>
 </div>
 </div>
 </div>
@@ -828,7 +791,7 @@ gem update asciidoctor-pdf</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">rougify <span class="nb">help </span>style</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% rougify <span class="nb">help </span>style</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -918,7 +881,7 @@ gem update asciidoctor-pdf</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor <span class="nt">-a</span> source-highlighter<span class="o">=</span>rouge <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor <span class="nt">-a</span> source-highlighter<span class="o">=</span>rouge <span class="se">\</span>
             <span class="nt">-a</span> rouge-style<span class="o">=</span>monokai &lt;fil.adoc&gt; ...</code></pre>
 </div>
 </div>
@@ -962,8 +925,8 @@ epub3-fonts.css</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">rougify style github <span class="o">&gt;</span> github.css
-rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% rougify style github <span class="o">&gt;</span> github.css
+% rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -981,7 +944,7 @@ rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 <p>Men selv med dette som utgangspunkt, må man være forberedt på en større utvidelse av CSS-ene for en fullverdig formatering av hele dokumentet. Disse tar kun av seg syntaksuthevelsene.</p>
 </div>
 <div class="paragraph">
-<p>For å få inkludert egne stiler kan man inkludere for dem på ulike måter, avhengig av output-format:</p>
+<p>For å få benyttet egne stiler kan man inkludere dem på ulike måter, avhengig av output-format:</p>
 </div>
 <div class="sect3">
 <h4 id="_html_stiling"><a class="anchor" href="#_html_stiling"></a>HTML-stiling</h4>
@@ -998,7 +961,7 @@ rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor <span class="nt">-a</span> <span class="nv">stylesheet</span><span class="o">=</span>my-style.css ...</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor <span class="nt">-a</span> <span class="nv">stylesheet</span><span class="o">=</span>my-style.css ...</code></pre>
 </div>
 </div>
 </div>
@@ -1017,7 +980,7 @@ rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor-epub3 <span class="nt">-a</span> ebook-theme<span class="o">=</span>my-style.yml ...</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor-epub3 <span class="nt">-a</span> ebook-theme<span class="o">=</span>my-style.yml ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1033,7 +996,7 @@ rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor-epub3 <span class="nt">-a</span> <span class="nv">stylesheet</span><span class="o">=</span>my-style.css ...</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor-epub3 <span class="nt">-a</span> <span class="nv">stylesheet</span><span class="o">=</span>my-style.css ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1055,38 +1018,30 @@ rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor-pdf <span class="nt">-a</span> pdf-theme<span class="o">=</span>my-theme.yml ...</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor-pdf <span class="nt">-a</span> pdf-theme<span class="o">=</span>my-theme.yml ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen <code>[source,&lt;språk&gt;]</code> i ADOC-filene, så blir de syntaksuthvet ut fra språk og ROUGE-stilvalg.</p>
+<p>Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen <code>[source,&lt;språk&gt;]</code> i ADOC-filene, så blir de syntaksuthvet ut fra språk og Rouge-stilvalg.</p>
 </div>
-<div class="paragraph">
-<p>Det følgende vil angi en Python-kodeblokk, hvor kodeord, spesielle symboler osv. vil bli fargelagt ut fra Rouge-valget:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="text">[source,python]</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>def hello():
-    print("hi")</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>❗ <strong>pandoc</strong> mapper forøvrig <em>fence blocks</em> til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med MD og konvertere til sluttformater med ADOC som mellommann.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>pandoc</strong> mapper forøvrig <em>fence blocks</em> til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med MD og konvertere til sluttformater med ADOC som mellommann.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rouge_produksjon"><a class="anchor" href="#_rouge_produksjon"></a>ROUGE: Produksjon</h3>
+<h3 id="_rouge_produksjon"><a class="anchor" href="#_rouge_produksjon"></a>Rouge: Produksjon</h3>
 <div class="paragraph">
-<p>Vi skal nå i detalj på hvordan output-formatene våre kan produseres i en praktisk situasjon, med en <em>real life</em>-katalogstruktur mm. Vi forutsetter da at vi jobber med et prosjekt organisert som følger:</p>
+<p>Vi skal nå i detalj se på hvordan output-formatene våre kan produseres i en praktisk situasjon, med en <em>real life</em>-katalogstruktur mm. Vi forutsetter da at vi jobber med et prosjekt organisert som følger:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1120,23 +1075,24 @@ rougify style monokai <span class="o">&gt;</span> monokai.css</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text">= Tittel
-Ola Nordmann &lt;ola.nordmann@gmail.com&gt;
-v1.0 2026-02-12
-:description: En beskrivelse
-:doctype: book
-:icons: font
-:toc: left
-:toc-title: Innholdsfortegnelse
-:toclevels: 3
-:sectanchors:
-:stylesheet: styles/asciidoctor.css
-:source-highlighter: rouge
-:rouge-style: monokai
-image::../images/cover.png[role=cover,align=center]
-
-\1include::sample.adoc[]</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="s">= Tittel</span>
+<span class="s">Ola Nordmann &lt;ola.nordmann@gmail.com&gt;</span>
+<span class="s">v1.0 2026-02-12</span>
+<span class="na">:description</span><span class="pi">:</span> <span class="s">En beskrivelse</span>
+<span class="na">:doctype</span><span class="pi">:</span> <span class="s">book</span>
+<span class="na">:icons</span><span class="pi">:</span> <span class="s">font</span>
+<span class="na">:toc</span><span class="pi">:</span> <span class="s">left</span>
+<span class="na">:toc-title</span><span class="pi">:</span> <span class="s">Innholdsfortegnelse</span>
+<span class="na">:toclevels</span><span class="pi">:</span> <span class="m">3</span>
+<span class="na">:sectanchors</span><span class="pi">:</span>
+<span class="na">:stylesheet</span><span class="pi">:</span> <span class="s">styles/asciidoctor.css</span>
+<span class="na">:source-highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
+<span class="na">:rouge-style</span><span class="pi">:</span> <span class="s">monokai</span>
+<span class="s">image::../images/cover.png[role=cover,align=center]</span></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>I etterkant av preamble vil man så typisk inkludere filen(e) som inneholder selve ADOC-teksten, altså f.eks. <code>include::sample.adoc[]</code>.</p>
 </div>
 <div class="paragraph">
 <p>Ønsker man higlighting, er det enklest, som gjort her, å inkludere <code>:source-highlighter: rouge</code> og f.eks. <code>:rouge-style: monokai</code> i preamble.</p>
@@ -1146,12 +1102,21 @@ image::../images/cover.png[role=cover,align=center]
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor config/html-master.adoc <span class="nt">-B</span> &lt;hjemmekatalog&gt; <span class="se">\</span>
-            <span class="nt">-D</span> builds <span class="nt">-o</span> &lt;navn&gt;.html</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor config/html-master.adoc <span class="nt">-B</span> &lt;hjemmekatalog&gt; <span class="se">\</span>
+             <span class="nt">-D</span> builds <span class="nt">-o</span> &lt;navn&gt;.html</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>❗ <strong>asciidoctor</strong> har fått masterfilen som input-fil. Denne ligger i underkatalogen <strong>config/</strong>, hvilket påvirker referansene til andre kataloger i treet. Opsjonen <code>-B</code> setter hjemmekatalogen, og filer i <strong>config/</strong> og <strong>stiler/</strong> finnes dermed korrekt uten prefiks <code>../</code>. <strong>images/</strong> trenger likevel dette prefikset (uvisst av hvilken grunn).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>asciidoctor</strong> har fått masterfilen som input-fil. Denne ligger i underkatalogen <strong>config/</strong>, hvilket påvirker referansene til andre kataloger i treet. Opsjonen <code>-B</code> setter hjemmekatalogen, og filer i <strong>config/</strong> og <strong>stiler/</strong> finnes dermed korrekt uten prefiks <code>../</code>. <strong>images/</strong> trenger likevel dette prefikset (uvisst av hvilken grunn).
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1172,24 +1137,31 @@ image::../images/cover.png[role=cover,align=center]
 <span class="na">:source-highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
 <span class="na">:rouge-style</span><span class="pi">:</span> <span class="s">base16.solarized.light</span>
 <span class="na">:ebook-stylesdir</span><span class="pi">:</span> <span class="s">../styles</span>
-<span class="na">:ebook-stylesheet</span><span class="pi">:</span> <span class="s">my-style.css</span>
-
-<span class="s">\1include::../sample.adoc[]</span></code></pre>
+<span class="na">:ebook-stylesheet</span><span class="pi">:</span> <span class="s">my-style.css</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Produksjonskommandoen kan da se slik ut:</p>
+<p>etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor-epub3 config/epub-master.adoc <span class="nt">-D</span> builds <span class="nt">-o</span> &lt;navn&gt;.epub</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor-epub3 config/epub-master.adoc <span class="nt">-D</span> builds <span class="nt">-o</span> &lt;navn&gt;.epub</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Igjen er <strong>rouge</strong> og <strong>rouge-style monokai</strong> satt i masterfilen.</p>
 </div>
-<div class="paragraph">
-<p>❗ Opsjonen <code>-B</code> for <strong>asciidoctor-apub3</strong> virker ikke etter hensikten, så prefiks <code>../</code> er benyttet for referanser til kataloger i masterfilen (se diskusjon over).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Opsjonen <code>-B</code> for <strong>asciidoctor-apub3</strong> virker ikke etter hensikten, så prefiks <code>../</code> er benyttet for referanser til kataloger i masterfilen (se diskusjon over).
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1199,38 +1171,45 @@ image::../images/cover.png[role=cover,align=center]
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="txt">= Tittel
-Ola Nordmann &lt;ola.nordmann@gmail.com&gt;
-v1.0 2026-02-12
-:description: En beskrivelse
-:doctype: book
-:front-cover-image: image:images/cover.png[]
-:title-page:
-:icons: font
-:toc: left
-:toc-title: Innholdsfortegnelse
-:toclevels: 3
-:sectanchors:
-:pdf-theme: styles/my-style.yml
-:source-highlighter: rouge
-:rouge-style: base16.dark
-
-\1include::sample.adoc[]</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="s">= Tittel</span>
+<span class="s">Ola Nordmann &lt;ola.nordmann@gmail.com&gt;</span>
+<span class="s">v1.0 2026-02-12</span>
+<span class="na">:description</span><span class="pi">:</span> <span class="s">En beskrivelse</span>
+<span class="na">:doctype</span><span class="pi">:</span> <span class="s">book</span>
+<span class="na">:front-cover-image</span><span class="pi">:</span> <span class="s">image:images/cover.png[]</span>
+<span class="na">:title-page</span><span class="pi">:</span>
+<span class="na">:icons</span><span class="pi">:</span> <span class="s">font</span>
+<span class="na">:toc</span><span class="pi">:</span> <span class="s">left</span>
+<span class="na">:toc-title</span><span class="pi">:</span> <span class="s">Innholdsfortegnelse</span>
+<span class="na">:toclevels</span><span class="pi">:</span> <span class="m">3</span>
+<span class="na">:sectanchors</span><span class="pi">:</span>
+<span class="na">:pdf-theme</span><span class="pi">:</span> <span class="s">styles/my-style.yml</span>
+<span class="na">:source-highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
+<span class="na">:rouge-style</span><span class="pi">:</span> <span class="s">base16.dark</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>og produksjonen kan gjøres ved:</p>
+<p>etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">asciidoctor-pdf <span class="nt">-B</span> &lt;arbeidskatalog&gt; <span class="nt">-D</span> builds <span class="nt">-o</span> &lt;navn&gt;.pdf</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% asciidoctor-pdf <span class="nt">-B</span> &lt;arbeidskatalog&gt; <span class="nt">-D</span> builds <span class="nt">-o</span> &lt;navn&gt;.pdf</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Igjen velges <strong>rouge</strong> og <strong>rouge-style</strong> fra masterfilen</p>
 </div>
-<div class="paragraph">
-<p>❗ Opsjonen <code>-B</code> fungerer fint for <strong>asciidoctro-pdf</strong>, slik at kataloger i masterfilen kan angis uten prefiks <code>../</code> (se diskusjon over).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Opsjonen <code>-B</code> fungerer fint for <strong>asciidoctro-pdf</strong>, slik at kataloger i masterfilen kan angis uten prefiks <code>../</code> (se diskusjon over).
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1243,9 +1222,9 @@ v1.0 2026-02-12
 <h4 id="_ubuntu"><a class="anchor" href="#_ubuntu"></a>Ubuntu</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>apt <span class="nb">install </span>pandoc
-<span class="nb">sudo </span>apt <span class="nb">install </span>texlive-xetex texlive-latex-recommended <span class="se">\</span>
-     texlive-latex-extra texlive-fonts-recommended</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>apt <span class="nb">install </span>pandoc
+% <span class="nb">sudo </span>apt <span class="nb">install </span>texlive-xetex texlive-latex-recommended <span class="se">\</span>
+      texlive-latex-extra texlive-fonts-recommended</code></pre>
 </div>
 </div>
 </div>
@@ -1253,9 +1232,9 @@ v1.0 2026-02-12
 <h4 id="_fedora"><a class="anchor" href="#_fedora"></a>Fedora</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>dnf <span class="nb">install </span>pandoc
-<span class="nb">sudo </span>dnf <span class="nb">install </span>texlive-xetex texlive-collection-latexrecommended <span class="se">\</span>
-     texlive-collection-fontsrecommended</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>dnf <span class="nb">install </span>pandoc
+% <span class="nb">sudo </span>dnf <span class="nb">install </span>texlive-xetex texlive-collection-latexrecommended <span class="se">\</span>
+      texlive-collection-fontsrecommended</code></pre>
 </div>
 </div>
 </div>
@@ -1270,7 +1249,7 @@ v1.0 2026-02-12
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pip3 <span class="nb">install </span>pygments</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pip3 <span class="nb">install </span>pygments</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1278,7 +1257,7 @@ v1.0 2026-02-12
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> pygments</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pip <span class="nb">install</span> <span class="nt">--upgrade</span> pygments</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1286,12 +1265,12 @@ v1.0 2026-02-12
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pygments</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>apt <span class="nb">install </span>python3-pygments</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash"><span class="nb">sudo </span>dnf <span class="nb">install </span>python3-pygments</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% <span class="nb">sudo </span>dnf <span class="nb">install </span>python3-pygments</code></pre>
 </div>
 </div>
 </div>
@@ -1302,8 +1281,8 @@ v1.0 2026-02-12
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pandoc <span class="nt">--version</span>
-pygmentize <span class="nt">-V</span></code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pandoc <span class="nt">--version</span>
+% pygmentize <span class="nt">-V</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1327,7 +1306,7 @@ pygmentize <span class="nt">-V</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pygmentize <span class="nt">-L</span> lexers</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pygmentize <span class="nt">-L</span> lexers</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1335,7 +1314,7 @@ pygmentize <span class="nt">-V</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pygmentize <span class="nt">-L</span> styles</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pygmentize <span class="nt">-L</span> styles</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1343,7 +1322,7 @@ pygmentize <span class="nt">-V</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pandoc <span class="nt">--list-highlight-styles</span></code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pandoc <span class="nt">--list-highlight-styles</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1366,17 +1345,17 @@ haddock</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pandoc test.md <span class="nt">--highlight-style</span><span class="o">=</span>pygments <span class="nt">-s</span> <span class="nt">-o</span> builds/test.html</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pandoc test.md <span class="nt">--highlight-style</span><span class="o">=</span>pygments <span class="nt">-s</span> <span class="nt">-o</span> builds/test.html</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pandoc test.md <span class="nt">--highlight-style</span><span class="o">=</span>breezedark <span class="nt">-o</span> builds/test.epub</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">% pandoc test.md <span class="nt">--highlight-style</span><span class="o">=</span>breezedark <span class="nt">-o</span> builds/test.epub</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">pandoc test.md <span class="nt">--highlight-style</span><span class="o">=</span>zenburn <span class="nt">--pdf-engine</span><span class="o">=</span>xelatex <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="bash">% pandoc test.md <span class="nt">--highlight-style</span><span class="o">=</span>zenburn <span class="nt">--pdf-engine</span><span class="o">=</span>xelatex <span class="se">\</span>
        <span class="nt">-o</span> builds/test.pdf</code></pre>
 </div>
 </div>
@@ -1448,8 +1427,17 @@ haddock</code></pre>
   <span class="na">geometry</span><span class="pi">:</span> <span class="s">margin=2.5cm</span></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>❗ Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette isteden et bilde inn på egen side i MD-dokumentet ved:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette isteden et bilde inn på egen side i MD-dokumentet ved:
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1493,34 +1481,34 @@ haddock</code></pre>
 <p>Det er det klart at begge bidrar med fin syntaksutheving i sluttproduktet.</p>
 </div>
 <div class="paragraph">
-<p>➕ Fordelen med det førstnevnte ligger i fleksibiliteten. Man må riktignok skrive egne CCS-er eller TEX-filer, som kan være alt fra enkle til utfordrende, men disse lar seg enklere sy sammen med det øvrige og med <strong>Pygments</strong>.</p>
+<p>Fordelen med det førstnevnte ligger i fleksibiliteten. Man må riktignok skrive egne CCS-er eller TEX-filer, som kan være alt fra enkle til utfordrende, men disse lar seg enklere sy sammen med det øvrige og med <strong>Pygments</strong>.</p>
 </div>
 <div class="paragraph">
-<p>➖ Ulempen er at fomatene blir nokså nakne uten egeninnsats.</p>
+<p>Ulempen er at fomatene blir nokså nakne uten egeninnsats.</p>
 </div>
 <div class="paragraph">
-<p>➕ Fordelen med det sistnevnte er at <strong>asciidoctor</strong> produserer veldig flotte ferdige formater og kan utnytte Asciidocs rikere muligheter med <em>admonitions</em>, <em>callouts</em>, bedre tabellhådntereing, matematikk og annet.</p>
+<p>Fordelen med det sistnevnte er at <strong>asciidoctor</strong> produserer veldig flotte ferdige formater og kan utnytte Asciidocs rikere muligheter med <em>admonitions</em>, <em>callouts</em>, bedre tabellhådntereing, matematikk og annet.</p>
 </div>
 <div class="paragraph">
-<p>➖ Ulempen er at default-settingene vanskelig lar seg sette til side. Selv mindre tilpasninger slipper ikke til og vil kunne kreve skriving av helt nye og fullverdige stilingsdokumenter.</p>
+<p>Ulempen er at default-settingene vanskelig lar seg sette til side. Selv mindre tilpasninger slipper ikke til og vil kunne kreve skriving av helt nye og fullverdige stilingsdokumenter.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_andre_hefter_i_serien"><a class="anchor" href="#_andre_hefter_i_serien"></a>Andre hefter i serien</h3>
 <div class="paragraph">
-<p>📘 Litt om Linux</p>
+<p>Litt om Linux</p>
 </div>
 <div class="paragraph">
-<p>📘 <a href="https://mailjaro.github.io/git-repo/">Litt om Gitt</a></p>
+<p><a href="https://mailjaro.github.io/git-repo/">Litt om Gitt</a></p>
 </div>
 <div class="paragraph">
-<p>📘 <a href="https://mailjaro.github.io/vscode-repo/">Litt om VS Code</a></p>
+<p><a href="https://mailjaro.github.io/vscode-repo/">Litt om VS Code</a></p>
 </div>
 <div class="paragraph">
-<p>📘 <a href="https://mailjaro.github.io/gpg-repo/">Litt om GPG</a></p>
+<p><a href="https://mailjaro.github.io/gpg-repo/">Litt om GPG</a></p>
 </div>
 <div class="paragraph">
-<p>📘 <a href="https://mailjaro.github.io/css-repo/">Litt om CSS</a></p>
+<p><a href="https://mailjaro.github.io/css-repo/">Litt om CSS</a></p>
 </div>
 </div>
 </div>
@@ -1529,7 +1517,7 @@ haddock</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0 2026-02-19<br>
-Last updated 2026-03-07 16:16:59 +0100
+Last updated 2026-03-07 20:08:33 +0100
 </div>
 </div>
 </body>
