@@ -1,7 +1,7 @@
-= Highligting i Asciidoctor
+= Syntaksutheving
 Jan R Sandbakken <mailjaro@gmail.com>
 v1.0 2026-02-12
-:description: Dette heftet forklarer hvordan man oppnår syntaksmerking i ulike formater vha. Asciidoctor
+:description: Et hefte om syntaksutheving
 :doctype: book
 :front-cover-image: image:images/cover.png[]
 :title-page:

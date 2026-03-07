@@ -1,13 +1,14 @@
-title: "Highligting i Asciidoctor"
+title: "Syntax highlighting"
 author:
   name: "Jan R Sandbakken"
 lang: "nb"
 date: "2026-03-06"
 revnumber: "1.0"
 revdate: "2026-03-06"
-description: "Guide to using Rouge with Asciidoctor for HTML, EPUB and PDF."
+description: "Guide to using Rouge and Pygments syntax highlighting in HTML, EPUB and PDF."
 keywords:
   - rouge
   - asciidoctor
-   -pygments
+  - pygments
+  - pandoc
   - syntax highlighting

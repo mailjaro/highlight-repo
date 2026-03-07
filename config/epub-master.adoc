@@ -1,9 +1,9 @@
-= Teskstutheving i AsciiDoc
+= Syntaksutheving
 Jan R Sandbakken <mailjaro@gmail.com>
 v1.0 2026-02-19
 :doctype: book
 :front-cover-image: image:../images/cover.png[]
-:description: Et hefte om syntaksutheving via AsciiDoc
+:description: Et hefte om syntaksutheving
 :icons: font
 :sectanchors:
 :source-highlighter: rouge
