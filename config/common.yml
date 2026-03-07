@@ -5,13 +5,9 @@ lang: "nb"
 date: "2026-03-06"
 revnumber: "1.0"
 revdate: "2026-03-06"
-docinfo: true
-doctype: book
-toc: left
-pdf-theme: styles/theme.yml
-contentfile: ../sample.adoc
 description: "Guide to using Rouge with Asciidoctor for HTML, EPUB and PDF."
 keywords:
   - rouge
   - asciidoctor
+   -pygments
   - syntax highlighting
