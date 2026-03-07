@@ -3,7 +3,5 @@ config/
 styles/
 images/
 .vscode/
-sample.adoc
-test.md
 high.md
 high.adoc
