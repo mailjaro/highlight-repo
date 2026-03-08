@@ -778,7 +778,7 @@ pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
 <div class="sect2">
 <h3 id="_rouge_bruk"><a class="anchor" href="#_rouge_bruk"></a>Rouge: Bruk</h3>
 <div class="paragraph">
-<p>Når dette er installert kan man ta i bruk uthevingen ved å inkludere det følgende på toppen (i <em>preamble</em>) til ADOC-filen, eller kanskje vel så vanlig, å inkludere det i premable på en masterfil (som gjerne er spesifikk for hvert output-format):</p>
+<p>Når dette er installert kan man ta i bruk uthevingen ved å inkludere det følgende på toppen (i <em>preamble</em>) til ADOC-filen, eller kanskje vel så vanlig, å inkludere det i premable på en masterfil (som gjerne er spesifikk for hvert output-format, og som inkluderer ADOC-filen(e)):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -918,10 +918,26 @@ epub3-fonts.css</code></pre>
 <p>hvorav den første inneholder layout, typografi, kapittelstruktur osv. Den siste definerer font-innlasting mm.</p>
 </div>
 <div class="paragraph">
-<p>Men om man likevel ikke er fornøyd med default og vil stile output-filene selv, har man anledning til det. Man <em>kan</em> da ta utgangspunkt i disse innebygde stilene, men det bør nevnes at disse er nokså kompakte og ikke enkle å jobbe med for ikke-speialister.</p>
+<p>Her er linker til filene:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HTML: <a href="https://github.com/asciidoctor/asciidoctor/blob/main/data/stylesheets/" class="bare">https://github.com/asciidoctor/asciidoctor/blob/main/data/stylesheets/</a></p>
+</li>
+<li>
+<p>EPUB: <a href="https://github.com/asciidoctor/asciidoctor-epub3/blob/main/data/styles" class="bare">https://github.com/asciidoctor/asciidoctor-epub3/blob/main/data/styles</a></p>
+</li>
+<li>
+<p>PDF: <a href="https://github.com/asciidoctor/asciidoctor-pdf/tree/main/data/themes" class="bare">https://github.com/asciidoctor/asciidoctor-pdf/tree/main/data/themes</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Men for syntaksuthevelsen kan det være greit å vite at man kan ta utgangspunkt i de nevnte Rouge-kombinasjonene ved å produsere CCS-er ved kommandoer som</p>
+<p>Men om man likevel ikke er fornøyd med default-valgene og vil stile output-filene selv, har man anledning til det. Man <em>kan</em> da ta utgangspunkt i disse innebygde stilene, men det bør nevnes at disse er nokså kompakte og ikke enkle å jobbe med for ikke-speialister.</p>
+</div>
+<div class="paragraph">
+<p>Men for syntaksuthevelsen kan det være greit å vite at man kan ta utgangspunkt i de nevnte Rouge-alternativene ved å produsere CCS-er ved kommandoer som</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1022,7 +1038,7 @@ epub3-fonts.css</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen <code>[source,&lt;språk&gt;]</code> i ADOC-filene, så blir de syntaksuthvet ut fra språk og Rouge-stilvalg.</p>
+<p>Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen <code>[source,&lt;språk&gt;]</code> i ADOC-filene, så blir de syntaksuthevet ut fra språk og Rouge-stilvalg.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1031,7 +1047,7 @@ epub3-fonts.css</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>pandoc</strong> mapper forøvrig <em>fence blocks</em> til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med MD og konvertere til sluttformater med ADOC som mellommann.
+<strong>pandoc</strong> mapper forøvrig <em>fence blocks</em> til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med skriving i MD og konvertere til sluttformater med ADOC som mellommann.
 </td>
 </tr>
 </table>
@@ -1087,7 +1103,7 @@ epub3-fonts.css</code></pre>
 <span class="na">:sectanchors</span><span class="pi">:</span>
 <span class="na">:stylesheet</span><span class="pi">:</span> <span class="s">styles/asciidoctor.css</span>
 <span class="na">:source-highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
-<span class="na">:rouge-style</span><span class="pi">:</span> <span class="s">monokai</span>
+<span class="na">:rouge-style</span><span class="pi">:</span> <span class="s">thankful_eyes</span>
 <span class="s">image::../images/cover.png[role=cover,align=center]</span></code></pre>
 </div>
 </div>
@@ -1095,10 +1111,10 @@ epub3-fonts.css</code></pre>
 <p>I etterkant av preamble vil man så typisk inkludere filen(e) som inneholder selve ADOC-teksten, altså f.eks. <code>include::sample.adoc[]</code>.</p>
 </div>
 <div class="paragraph">
-<p>Ønsker man higlighting, er det enklest, som gjort her, å inkludere <code>:source-highlighter: rouge</code> og f.eks. <code>:rouge-style: monokai</code> i preamble.</p>
+<p>Ønsker man higlighting, er det altså enklest, som gjort her, å inkludere <code>:source-highlighter: rouge</code> og f.eks. <code>:rouge-style: thankful_eyes</code> i preamble.</p>
 </div>
 <div class="paragraph">
-<p>Ofte ønsker man å sende output til en egen katalog, f.eks, <strong>bulid/</strong>, og kanskje med et bestemt filnavn, f.eks. <strong>test.html</strong>. Dermed ender vi opp med å gjøre:</p>
+<p>Ofte ønsker man å sende output til en egen katalog, f.eks, <strong>builds/</strong>, og kanskje med et bestemt filnavn. Dermed ender vi opp med å gjøre:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1113,7 +1129,7 @@ epub3-fonts.css</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>asciidoctor</strong> har fått masterfilen som input-fil. Denne ligger i underkatalogen <strong>config/</strong>, hvilket påvirker referansene til andre kataloger i treet. Opsjonen <code>-B</code> setter hjemmekatalogen, og filer i <strong>config/</strong> og <strong>stiler/</strong> finnes dermed korrekt uten prefiks <code>../</code>. <strong>images/</strong> trenger likevel dette prefikset (uvisst av hvilken grunn).
+<strong>asciidoctor</strong> får her masterfilen som input-fil. Denne ligger i underkatalogen <strong>config/</strong>, hvilket påvirker referansene til andre kataloger i treet. Opsjonen <code>-B</code> setter hjemmekatalogen som referanse, og filer i <strong>config/</strong> og <strong>stiler/</strong> finnes dermed korrekt uten prefiks <code>../</code>. <strong>images/</strong> trenger likevel dette prefikset (uvisst av hvilken grunn).
 </td>
 </tr>
 </table>
@@ -1141,7 +1157,7 @@ epub3-fonts.css</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:</p>
+<p>etterfulgt av en include av ADOC-tekstfilene (se eksempel vist over). Produksjonen kan gjøres ved:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1149,7 +1165,7 @@ epub3-fonts.css</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Igjen er <strong>rouge</strong> og <strong>rouge-style monokai</strong> satt i masterfilen.</p>
+<p>Igjen er <strong>rouge</strong> og <strong>rouge-style</strong> satt i masterfilen.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1189,7 +1205,7 @@ Opsjonen <code>-B</code> for <strong>asciidoctor-apub3</strong> virker ikke ette
 </div>
 </div>
 <div class="paragraph">
-<p>etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:</p>
+<p>etterfulgt av en include av ADOC-tekstfilene (se eksempel vist over). Produksjonen kan gjøres ved:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1216,7 +1232,7 @@ Opsjonen <code>-B</code> fungerer fint for <strong>asciidoctro-pdf</strong>, sli
 <div class="sect2">
 <h3 id="_pandoc_installering"><a class="anchor" href="#_pandoc_installering"></a>pandoc-installering</h3>
 <div class="paragraph">
-<p>Hvordan pandoc installeres på Ubuntu og Fedora er vist under. For PDF-produksjon trenger man også en moderne LaTeX-motor, og installasjon av en slik er også vist.</p>
+<p>Hvordan <strong>pandoc</strong> installeres på Ubuntu og Fedora er vist under. For PDF-produksjon trenger man også en moderne LaTeX-motor, og installasjon av en slik er også vist.</p>
 </div>
 <div class="sect3">
 <h4 id="_ubuntu"><a class="anchor" href="#_ubuntu"></a>Ubuntu</h4>
@@ -1242,7 +1258,7 @@ Opsjonen <code>-B</code> fungerer fint for <strong>asciidoctro-pdf</strong>, sli
 <div class="sect2">
 <h3 id="_pygments_installering"><a class="anchor" href="#_pygments_installering"></a>Pygments: Installering</h3>
 <div class="paragraph">
-<p>La oss forlate <strong>Rouge</strong> og ADOCs, og isteden tar for oss <strong>Pygments</strong> og MD.</p>
+<p>La oss forlate <strong>Rouge</strong> og ADOC, og isteden tar for oss <strong>Pygments</strong> og MD.</p>
 </div>
 <div class="paragraph">
 <p><strong>Pygments</strong> er et Python-basert system for syntaksuthevelse. Det fins gjerne ferdige pakker man kan installere, f.eks. under <strong>dnf</strong> og <strong>snap</strong>, men det kan være bedre å installere via <strong>pip3</strong> direkte:</p>
@@ -1277,7 +1293,7 @@ Opsjonen <code>-B</code> fungerer fint for <strong>asciidoctro-pdf</strong>, sli
 <div class="sect2">
 <h3 id="_pygments_relaterte_versjoner"><a class="anchor" href="#_pygments_relaterte_versjoner"></a>Pygments: Relaterte versjoner</h3>
 <div class="paragraph">
-<p>Vi har valgt pip-varianten her, og versjonene vi benytterfremkommer av</p>
+<p>Vi har valgt pip-varianten her, og versjonene vi benytter fremkommer av</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1302,7 +1318,7 @@ Opsjonen <code>-B</code> fungerer fint for <strong>asciidoctro-pdf</strong>, sli
 <div class="sect2">
 <h3 id="_pygments_generelt"><a class="anchor" href="#_pygments_generelt"></a>Pygments: Generelt</h3>
 <div class="paragraph">
-<p>Om man vil se en liste over støttede språk og formater, kan man gjøre: Vi skal benytte Pygments til å få</p>
+<p>Om man vil se en liste over støttede språk og formater, kan man gjøre:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1434,7 +1450,7 @@ haddock</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette isteden et bilde inn på egen side i MD-dokumentet ved:
+Merk at <strong>pandoc</strong> ikke har noen cover-image-metadata for HTML og PDF. Der settes isteden et bilde inn på egen side i MD-dokumentet ved:
 </td>
 </tr>
 </table>
@@ -1470,10 +1486,10 @@ Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette ist
 <div class="ulist">
 <ul>
 <li>
-<p>pandoc med <strong>Pygments</strong> fra MD</p>
+<p><strong>pandoc</strong> med <strong>Pygments</strong> fra MD</p>
 </li>
 <li>
-<p>asciidoctor med <strong>Rouge</strong> fra Asciidoc</p>
+<p><strong>asciidoctor</strong> med <strong>Rouge</strong> fra Asciidoc</p>
 </li>
 </ul>
 </div>
@@ -1487,7 +1503,7 @@ Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette ist
 <p>Ulempen er at fomatene blir nokså nakne uten egeninnsats.</p>
 </div>
 <div class="paragraph">
-<p>Fordelen med det sistnevnte er at <strong>asciidoctor</strong> produserer veldig flotte ferdige formater og kan utnytte Asciidocs rikere muligheter med <em>admonitions</em>, <em>callouts</em>, bedre tabellhådntereing, matematikk og annet.</p>
+<p>Fordelen med det sistnevnte er at <strong>asciidoctor</strong> produserer veldig flotte ferdige formater og kan utnytte Asciidocs rikere muligheter med <em>admonitions</em>, <em>callouts</em>, bedre tabellhåndtering, matematikk og annet.</p>
 </div>
 <div class="paragraph">
 <p>Ulempen er at default-settingene vanskelig lar seg sette til side. Selv mindre tilpasninger slipper ikke til og vil kunne kreve skriving av helt nye og fullverdige stilingsdokumenter.</p>
@@ -1499,7 +1515,7 @@ Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette ist
 <p>Litt om Linux</p>
 </div>
 <div class="paragraph">
-<p><a href="https://mailjaro.github.io/git-repo/">Litt om Gitt</a></p>
+<p><a href="https://mailjaro.github.io/git-repo/">Litt om Git</a></p>
 </div>
 <div class="paragraph">
 <p><a href="https://mailjaro.github.io/vscode-repo/">Litt om VS Code</a></p>
@@ -1517,7 +1533,7 @@ Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette ist
 <div id="footer">
 <div id="footer-text">
 Version 1.0 2026-02-19<br>
-Last updated 2026-03-07 20:08:33 +0100
+Last updated 2026-03-07 20:33:56 +0100
 </div>
 </div>
 </body>
