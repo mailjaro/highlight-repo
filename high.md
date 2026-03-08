@@ -58,7 +58,7 @@ Disse kan evt. oppdateres ved:
 
 ## Rouge: Bruk
 
-Når dette er installert kan man ta i bruk uthevingen ved å inkludere det følgende på toppen (i *preamble*) til ADOC-filen, eller kanskje vel så vanlig, å inkludere det i premable på en masterfil (som gjerne er spesifikk for hvert output-format):
+Når dette er installert kan man ta i bruk uthevingen ved å inkludere det følgende på toppen (i *preamble*) til ADOC-filen, eller kanskje vel så vanlig, å inkludere det i premable på en masterfil (som gjerne er spesifikk for hvert output-format, og som inkluderer ADOC-filen(e)):
 
 ```yaml
 :source-highlighter: rouge
@@ -125,9 +125,16 @@ epub3-fonts.css
 
 hvorav den første inneholder layout, typografi, kapittelstruktur osv. Den siste definerer font-innlasting mm.
 
-Men om man likevel ikke er fornøyd med default og vil stile output-filene selv, har man anledning til det. Man *kan* da ta utgangspunkt i disse innebygde stilene, men det bør nevnes at disse er nokså kompakte og ikke enkle å jobbe med for ikke-speialister.
+Her er linker til filene:
 
-Men for syntaksuthevelsen kan det være greit å vite at man kan ta utgangspunkt i de nevnte Rouge-kombinasjonene ved å produsere CCS-er ved kommandoer som
+- HTML: https://github.com/asciidoctor/asciidoctor/blob/main/data/stylesheets/
+- EPUB: https://github.com/asciidoctor/asciidoctor-epub3/blob/main/data/styles
+- PDF: https://github.com/asciidoctor/asciidoctor-pdf/tree/main/data/themes
+
+
+Men om man likevel ikke er fornøyd med default-valgene og vil stile output-filene selv, har man anledning til det. Man *kan* da ta utgangspunkt i disse innebygde stilene, men det bør nevnes at disse er nokså kompakte og ikke enkle å jobbe med for ikke-speialister.
+
+Men for syntaksuthevelsen kan det være greit å vite at man kan ta utgangspunkt i de nevnte Rouge-alternativene ved å produsere CCS-er ved kommandoer som
 
 ```bash
 % rougify style github > github.css
@@ -201,9 +208,9 @@ i preamble eller utfør følgende dirkete fra kommandolinja
 % asciidoctor-pdf -a pdf-theme=my-theme.yml ...
 ```
 
-Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen `[source,<språk>]` i ADOC-filene, så blir de syntaksuthvet ut fra språk og Rouge-stilvalg.
+Når alt er tilrettelagt for syntaksytheving på disse måtene, trenger man bare å lage kodeblokker av formen `[source,<språk>]` i ADOC-filene, så blir de syntaksuthevet ut fra språk og Rouge-stilvalg.
 
-❗ **pandoc** mapper forøvrig *fence blocks* til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med MD og konvertere til sluttformater med ADOC som mellommann.
+❗ **pandoc** mapper forøvrig *fence blocks* til slike kodeblokker når den konverterer MD til ADOC. Dermed kan man også gjerne starte med skriving i MD og konvertere til sluttformater med ADOC som mellommann.
 
 ## Rouge: Produksjon
 
@@ -236,22 +243,22 @@ v1.0 2026-02-12
 :sectanchors:
 :stylesheet: styles/asciidoctor.css
 :source-highlighter: rouge
-:rouge-style: monokai
+:rouge-style: thankful_eyes
 image::../images/cover.png[role=cover,align=center]
 ```
 
 I etterkant av preamble vil man så typisk inkludere filen(e) som inneholder selve ADOC-teksten, altså f.eks. `include::sample.adoc[]`.
 
-Ønsker man higlighting, er det enklest, som gjort her, å inkludere `:source-highlighter: rouge` og f.eks. `:rouge-style: monokai` i preamble.
+Ønsker man higlighting, er det altså enklest, som gjort her, å inkludere `:source-highlighter: rouge` og f.eks. `:rouge-style: thankful_eyes` i preamble.
 
-Ofte ønsker man å sende output til en egen katalog, f.eks, **bulid/**, og kanskje med et bestemt filnavn, f.eks. **test.html**. Dermed ender vi opp med å gjøre:
+Ofte ønsker man å sende output til en egen katalog, f.eks, **builds/**, og kanskje med et bestemt filnavn. Dermed ender vi opp med å gjøre:
 
 ```bash
 % asciidoctor config/html-master.adoc -B <hjemmekatalog> \
              -D builds -o <navn>.html
 ```
 
-❗ **asciidoctor** har fått masterfilen som input-fil. Denne ligger i underkatalogen **config/**, hvilket påvirker referansene til andre kataloger i treet. Opsjonen `-B` setter hjemmekatalogen, og filer i **config/** og **stiler/** finnes dermed korrekt uten prefiks `../`. **images/** trenger likevel dette prefikset (uvisst av hvilken grunn).  
+❗ **asciidoctor** får her masterfilen som input-fil. Denne ligger i underkatalogen **config/**, hvilket påvirker referansene til andre kataloger i treet. Opsjonen `-B` setter hjemmekatalogen som referanse, og filer i **config/** og **stiler/** finnes dermed korrekt uten prefiks `../`. **images/** trenger likevel dette prefikset (uvisst av hvilken grunn).  
 
 ### EPUB-output
 
@@ -272,13 +279,13 @@ v1.0 2026-02-19
 :ebook-stylesheet: my-style.css
 ```
 
-etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:
+etterfulgt av en include av ADOC-tekstfilene (se eksempel vist over). Produksjonen kan gjøres ved:
 
 ```bash
 % asciidoctor-epub3 config/epub-master.adoc -D builds -o <navn>.epub
 ```
 
-Igjen er **rouge** og **rouge-style monokai** satt i masterfilen.
+Igjen er **rouge** og **rouge-style** satt i masterfilen.
 
 ❗ Opsjonen `-B` for **asciidoctor-apub3** virker ikke etter hensikten, så prefiks `../` er benyttet for referanser til kataloger i masterfilen (se diskusjon over).
 
@@ -304,7 +311,7 @@ v1.0 2026-02-12
 :rouge-style: base16.dark
 ```
 
-etterfulgt av en include av ADOC-tkestfilene (se eksempel vist over). Produksjonen kan gjøres ved:
+etterfulgt av en include av ADOC-tekstfilene (se eksempel vist over). Produksjonen kan gjøres ved:
 
 ```bash
 % asciidoctor-pdf -B <arbeidskatalog> -D builds -o <navn>.pdf
@@ -316,7 +323,7 @@ Igjen velges **rouge** og **rouge-style** fra masterfilen
 
 ## pandoc-installering
 
-Hvordan pandoc installeres på Ubuntu og Fedora er vist under. For PDF-produksjon trenger man også en moderne LaTeX-motor, og installasjon av en slik er også vist.
+Hvordan **pandoc** installeres på Ubuntu og Fedora er vist under. For PDF-produksjon trenger man også en moderne LaTeX-motor, og installasjon av en slik er også vist.
 
 ### Ubuntu
 
@@ -336,7 +343,7 @@ Hvordan pandoc installeres på Ubuntu og Fedora er vist under. For PDF-produksjo
 
 ## Pygments: Installering
 
-La oss forlate **Rouge** og ADOCs, og isteden tar for oss **Pygments** og MD.
+La oss forlate **Rouge** og ADOC, og isteden tar for oss **Pygments** og MD.
 
 **Pygments** er et Python-basert system for syntaksuthevelse. Det fins gjerne ferdige pakker man kan installere, f.eks. under **dnf** og **snap**, men det kan være bedre å installere via **pip3** direkte:
 
@@ -362,7 +369,7 @@ Pygments kan da siden oppgraderes ved:
 
 ## Pygments: Relaterte versjoner
 
-Vi har valgt pip-varianten her, og versjonene vi benytterfremkommer av
+Vi har valgt pip-varianten her, og versjonene vi benytter   fremkommer av
 
 ```bash
 % pandoc --version
@@ -377,7 +384,7 @@ I dette heftet er følgende lagt i grunn:
 ## Pygments: Generelt
 
 Om man vil se en liste over støttede språk og formater, kan man gjøre:
-Vi skal benytte Pygments til å få
+
 ```bash
 % pygmentize -L lexers
 ```
@@ -479,7 +486,7 @@ variables:
   geometry: margin=2.5cm
 ```
 
-❗ Merk at pandoc ikke har noen cover-image-metadata for HTML og PDF. Der sette isteden et bilde inn på egen side i MD-dokumentet ved:
+❗ Merk at **pandoc** ikke har noen cover-image-metadata for HTML og PDF. Der settes isteden et bilde inn på egen side i MD-dokumentet ved:
 
 ```text
 ![Cover](images/cover.png)
@@ -500,8 +507,8 @@ Her kan man i en rullemeny velge f.eks. **github-dark.css**, **twighlight.css** 
 
 La oss avslutte med en liten sammenlikning av
 
-- pandoc med **Pygments** fra MD
-- asciidoctor med **Rouge** fra Asciidoc
+- **pandoc** med **Pygments** fra MD
+- **asciidoctor** med **Rouge** fra Asciidoc
 
 Det er det klart at begge bidrar med fin syntaksutheving i sluttproduktet.
 
@@ -509,7 +516,7 @@ Det er det klart at begge bidrar med fin syntaksutheving i sluttproduktet.
 
 ➖ Ulempen er at fomatene blir nokså nakne uten egeninnsats.
 
-➕ Fordelen med det sistnevnte er at **asciidoctor** produserer veldig flotte ferdige formater og kan utnytte Asciidocs rikere muligheter med *admonitions*, *callouts*, bedre tabellhådntereing, matematikk og annet.
+➕ Fordelen med det sistnevnte er at **asciidoctor** produserer veldig flotte ferdige formater og kan utnytte Asciidocs rikere muligheter med *admonitions*, *callouts*, bedre tabellhåndtering, matematikk og annet.
 
 ➖ Ulempen er at default-settingene vanskelig lar seg sette til side. Selv mindre tilpasninger slipper ikke til og vil kunne kreve skriving av helt nye og fullverdige stilingsdokumenter.
 
@@ -517,7 +524,7 @@ Det er det klart at begge bidrar med fin syntaksutheving i sluttproduktet.
 
 📘 Litt om Linux
 
-📘 [Litt om Gitt](https://mailjaro.github.io/git-repo/)
+📘 [Litt om Git](https://mailjaro.github.io/git-repo/)
 
 📘 [Litt om VS Code](https://mailjaro.github.io/vscode-repo/)
 
