@@ -417,7 +417,7 @@ haddock
 Man utnytter disse syntaksstilene i våre tre formater ved kommandoer som: 
 
 ```bash
-% pandoc test.md --highlight-style=pygments -s -o builds/test.html
+% pandoc test.md --standalone --highlight-style=pygments -o builds/test.html
 ```
 
 ```bash
