@@ -522,7 +522,7 @@ Det er det klart at begge bidrar med fin syntaksutheving i sluttproduktet.
 
 ## Andre hefter i serien
 
-📘 Litt om Linux
+📘 [Linux for hjemmebruk](https://mailjaro.github.io/linux-repo/)
 
 📘 [Litt om Git](https://mailjaro.github.io/git-repo/)
 
@@ -531,3 +531,7 @@ Det er det klart at begge bidrar med fin syntaksutheving i sluttproduktet.
 📘 [Litt om GPG](https://mailjaro.github.io/gpg-repo/)
 
 📘 [Litt om CSS](https://mailjaro.github.io/css-repo/)
+
+📘 [Litt om Makefiles](https://mailjaro.github.io/makefile-repo/)
+
+📘 [Moderne AI: Virkemåte](https://mailjaro.github.io/ai-repo/)
